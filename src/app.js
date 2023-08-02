@@ -9,8 +9,7 @@ let posts = [];
 
 const publicPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../views");
-console.log(publicPath);
-console.log(viewsPath);
+
 
 
 app.use(bodyParser.urlencoded({
