@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%-include("partials/header.ejs") %>
+</head>
+
+<body>
+    <%-include("partials/navbar.ejs")  %>
+
+    <main class="container-fluid col-md-10 col-12">
+        <div class="blog-section">
+
+              <h1 id="post-title"><%= title %></h1>
+              <p id="post-content"><%= content %></p>
+
+        </div>
+    </main>
+
+
+    <%-include("partials/footer.ejs") %>
+
+</body>
+
+</html>

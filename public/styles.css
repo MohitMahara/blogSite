@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat:wght@400;500;700&family=Piazzolla:wght@200;400;900&family=Poppins:wght@400;500;700&family=Roboto:wght@400;500&family=Ysabeau+SC:wght@400;500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.navbar {
+    color: white;
+    padding: 0;
+}
+
+
+.bg-body-tertiary,
+.outer-nav {
+    background-color: #f2f2f2 !important;
+}
+
+.nav-item {
+    color: grey;
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    margin-left: 1rem;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    font-family: 'Ysabeau SC', sans-serif;
+    font-weight: 600;
+}
+
+/* post section */
+
+.blog-section,
+.compose-main-content,
+.contact-us {
+    padding: 3rem 1rem;
+}
+
+.compose-main-content h1,
+.contact-us h1 {
+    font-size: 1.8rem;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 2rem;
+}
+
+.compose-main-content textarea,
+.contact-us textarea {
+    font-size: 1rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    outline: none;
+    padding: 1rem;
+}
+
+.compose-main-content input[type ="text"],
+.contact-us input[type ="text"],
+.contact-us input[type ="email"] {
+    font-size: 0.8rem;
+    width: 100%;
+    outline: none;
+    padding: 0.5rem;
+}
+
+.compose-main-content input[type ="submit"],
+.contact-us input[type ="submit"]{
+    padding: 10px 30px;
+    background-color: #1F8A70;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    display: block;
+}
+
+.compose-main-content label,
+.contact-us label{
+    display: block;
+    margin-block: 0.5rem;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 600;
+}
+
+
+/* header section */
+
+.header-section{
+    display: flex;
+    gap: 50px;
+    margin-top:2rem;
+    margin-bottom: 60px;
+
+}
+
+.header-section .left h1{
+    font-family: 'Montserrat',sans-serif;
+    margin-block: 2rem;
+}
+
+.header-section .left p{
+    font-size: 1.1rem;
+    font-family: "Montserrat",sans-serif;
+    line-height: 2.2rem;
+    letter-spacing: 1px;
+
+
+}
+
+
+.header-section .right img{
+    width: 80%;
+}
+
+hr{
+    color: black;
+    height: 1px;
+    width: 100%;
+    margin-block: 80px;
+}
+
+
+/* posts section */
+
+.posts-heading{
+    font-size: 2rem;
+    font-family: "Montserrat",sans-serif;
+    margin-block:3rem;
+}
+
+.post-item{
+    margin-block: 60px;
+}
+
+.post-item h2{
+    margin-bottom: 30px;
+}
+
+.post-item p,
+#post-content{
+    font-size: 1rem;
+    font-family: "Roboto",sans-serif;
+    letter-spacing: 1px;
+    line-height: 30px;
+    overflow: auto;
+}
+
+#post-title{
+    margin-bottom: 2rem;
+}
+
+.about-us .content{
+    margin-block: 40px;
+    display: flex;
+}
+
+.about-us .about-us-left h1{
+    font-family: "Montserrat",sans-serif;
+    margin-bottom: 30px;
+}
+
+.about-us .about-us-left p{
+    font-size: 1rem;
+    font-family: "Montserrat",sans-serif;
+    letter-spacing: 1px;
+    line-height: 30px;
+    margin-bottom: 40px;
+}
+
+.about-us .about-us-left button{
+    padding: 10px 30px;
+    background-color: #1F8A70;
+    color: white;
+    border-radius: 12px;
+    border: none;
+
+}
+
+
+/* footer section */
+
+
+footer {
+    background-color: #1F8A70 !important;
+    margin-top: auto;
+    display: grid;
+    place-items: center;
+    width: 100%;
+
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+    padding-block: 0.8rem;
+    color: white;
+}
+
+
+
+
+/* media queries */
+
+@media screen and (max-width:768px) {
+    .header-section{
+      flex-direction: column;
+    }
+
+    .header-section .left{
+        width: 100%;
+    }
+
+    .header-section .right{
+        width: 60%;
+        margin: auto;
+    }
+
+    .about-us .content{
+        flex-direction: column-reverse;
+        gap: 50px;
+    }
+
+    .about-us .about-us-left{
+        width: 100%;
+        margin-block: 20px;
+    }
+
+    .about-us .about-us-right{
+        width: 70%;
+        margin: auto;
+    }
+    
+}
+
+
+@media screen and (max-width:425px) {
+
+    .blog-section{
+        padding: 1rem;
+    }
+
+    .header-section{
+      margin-top: 1rem;
+    }
+
+    .header-section .left{
+        width: 100%;
+    }
+
+    .header-section .right{
+        width: 60%;
+        margin: auto;
+    }
+
+    .about-us .content{
+        flex-direction: column-reverse;
+        gap: 50px;
+    }
+
+    .about-us .about-us-left{
+        width: 100%;
+        margin-block: 20px;
+    }
+
+    .about-us .about-us-right{
+        width: 70%;
+        margin: auto;
+    }
+    
+}

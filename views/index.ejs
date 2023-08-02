@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%-include("partials/header.ejs") %>
+</head>
+
+<body>
+  <%-include("partials/navbar.ejs") %>
+
+  <main class="container-fluid col-md-10 col-12">
+    <div class="blog-section">
+
+      <div class="header-section">
+
+        <div class="left col-md-8 col-12">
+          <h1>The heaven for bloggers</h1>
+          <p>iBlog is a website which lets you submit an article which upon approval will be up on our website
+            and you can get a good amount of reach from here Lorem ipsum, dolor sit amet consectetur adipisicing
+            elit. Expedita nemo eveniet, deleniti hic, est</p>
+        </div>
+
+        <div class="right col-md-4 col-12">
+          <img src="https://cdn3d.iconscout.com/3d/premium/thumb/blog-writing-6374004-5272619.png" alt="">
+        </div>
+
+      </div>
+      <hr>
+
+      <!-- created post by user -->
+
+
+      <div class="posts-container">
+        <h2 class="posts-heading"> Blog Posts</h2>
+
+
+        <% if(locals.posts){ %>
+        <% posts.forEach((post) => {  %>
+
+        <div class="post-item">
+          <h2><%= post.title %></h3>
+            <p><%= post.data.substring(0, 100) + "...." %> <a href="/posts/<%=post.title%>/">Read more...</a></p>
+        </div>
+        
+        <%   })  %>
+        <% }  %>
+
+
+        <div class="post-item">
+          <h2>Deal Dive: Cutting through the noise in a category clouded by catastrophic failure</h2>
+          <p>The Toronto-based startup is building a machine, VitalOne, that can perform more than 50 blood tests —
+            covering nearly all of those considered routine — and get patient results back in 20 minutes, not multiple
+            days. Co-founder and CEO Vasu Nadella said that he got interested in the space because he and his
+            co-founders have watched family members deal with chronic illness and know that being able to get quick
+            diagnostic results is crucial for treatment.
+
+            Plus, Nadella wanted to know why companies couldn’t seem to get the solution to this problem right. While
+            Theranos failed for a variety of reasons, the other companies trying to build these quicker blood diagnostic
+            tools had yet to ship products. He thought maybe he could crack the code.
+
+            The startup launched in 2019 and built quietly until it debuted its device at the American Association of
+            Clinical Chemistry’s annual meeting — the industry’s “Super Bowl” — last Monday. Vital Bio also announced
+            that it had raised $48 million in venture funding from Labcorp, Inovia Capital, Lachy Groom and Sam Altman,
+            among others.
+
+            Nadella said the company has focused on making sure that its device produces accurate results and that when
+            it does drift, they know how to prevent it from impacting the final diagnosis. He said the company waited to
+            start talking about what it was up to until it felt it had enough to back up its claims.
+          </p>
+        </div>
+
+        <div class="post-item">
+          <h2>Twitter, now X, opens up its ad revenue sharing program with global creators</h2>
+          <p>Earlier this month, Twitter — which has since rebranded as X — began sharing ad revenue with verified
+            creators in an attempt to retain top talent on its platform. Today, the company announced its “Ads Revenue
+            Sharing” program is now available for eligible creators globally. The program, according to posts by X owner
+            Elon Musk, aims to dole out $5 million in the first round of creator payments. This would be cumulative from
+            the month of February onward, he noted.
+
+            Several creators posted they had received substantial payouts as a result, with some ranging in the five to
+            six figures.
+
+            To be eligible, X users will need to subscribe to Blue (formerly Twitter Blue) or Verified Organizations and
+            must have “at least 15M impressions on your cumulative posts within the last 3 months,” the website on the
+            creator program explains. In addition, users must have at least 500 followers.</p>
+        </div>
+
+
+        <div class="post-item">
+          <h2>This week in food tech: New fund shows food investments are still simmering</h2>
+          <p>The venture capital fund madness we’ve seen all year has made its way to the food sector. This week, I
+            wrote about Supply Change Capital, which closed on $40 million in capital commitments for its first fund,
+            targeting investments in the global food industry.
+
+            The female and Latina-owned firm is spearheaded by co-founders and managing partners Noramay Cadena and
+            Shayna Harris, who met 14 years ago in business school.
+
+            The firm has already made 15 investments, including in allergen-free snack food company Partake Foods,
+            ingredients startup Michroma and alternative seafood maker Aqua Cultured Foods.
+
+            Supply Change joins firms like Joyful Ventures, which debuted in June with $23 million, focused on
+            investment in sustainable protein startups. Joyful was co-founded by Jennifer Stojkovic, Milo Runkle and
+            Blaine Vess and has made two investments from the fund, including New School Foods and Orbillion Bio.
+
+            Global investment in food tech and agtech startups were 44% lower than in 2021, totaling $29.6 billion last
+            year. Granted, 2021 had record-breaking investments into this space, but with all this dry powder on the
+            sidelines, it looks promising for the next year.</p>
+        </div>
+
+
+
+        <div class="post-item">
+          <h2>Twitter rebrands to ‘X,’ hackers infect Call of Duty, and foreign visitors to China go cashless</h2>
+          <p>Twitter rebrands to “X”: This week, Twitter removed its iconic bird logo and adopted “X” as its new
+            official branding. The move, which Elon Musk announced over the weekend, is a harbinger of the platform’s
+            shift — perhaps more aspirational than concrete — to deemphasize text tweets in favor of audio, video,
+            messaging and payment and banking.
+
+            Now it’s my X: Twitter’s rebranding to X hasn’t been faring exceptionally well. In addition to a haphazard
+            rollout that saw parts of the site referencing “X” while others still implored you to “search Twitter” or
+            push a blue button to “Tweet,” the company didn’t even make an attempt to secure the @x Twitter handle,
+            owned by Gene X Hwang of the corporate photography and videography studio Orange Photography. Twitter later
+            wrested control of the handle without notifying or compensating Hwang.
+
+            Hackers infect Call of Duty: Hackers are infecting players of an old Call of Duty game, Modern Warfare 2,
+            with a worm that spreads automatically in online lobbies. As Lorenzo writes, Modern Warfare 2 was released
+            quite a bit ago — 2009 — but still has a small community of players. Call of Duty publisher Activision said
+            in a tweet that it would bring the Steam version of the game offline as it “investigates report of [the]
+            issue.”
+
+            Foreign visitors to China go cashless: This week, China’s two dominant mobile payment solutions, WeChat Pay
+            and Alipay, announced that foreign users can now pay at Chinese retailers by linking their foreign credit
+            cards, including Visa, Mastercard and Discover. Previously, using WeChat Pay and Alipay in China required a
+            local bank account, making it challenging for short-term visitors to use these payment methods.</p>
+        </div>
+
+
+      </div>
+
+
+
+
+
+    </div>
+  </main>
+
+  <%-include("partials/footer.ejs") %>
+
+</body>
+
+</html>
