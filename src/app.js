@@ -1,16 +1,16 @@
-import express from "express";
-import bodyParser from "body-parser";
-import _ from "lodash";
-import { fileURLToPath } from "url";
-import {dirname} from "path";
+const express = require("express");
+const bodyParser = require("body-parser");
+const path = require("path");
+const lodash = require("lodash");
 const app = express();
 const PORT = process.env.PORT || 8000;
 const date = new Date();
 let posts = [];
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const publicPath = __dirname + '/public';
-const viewsPath = __dirname + "/views";
+const publicPath = path.join(__dirname, "../public");
+const viewsPath = path.join(__dirname, "../views");
+console.log(publicPath);
+console.log(viewsPath);
 
 
 app.use(bodyParser.urlencoded({
@@ -62,10 +62,10 @@ app.post("/compose", (req, res) => {
 
 app.get("/posts/:postName", (req, res) => {
 
-    let requestedPost = _.lowerCase(req.params.postName);
+    let requestedPost = lodash.lowerCase(req.params.postName);
 
     posts.forEach(post => {
-        let title = _.lowerCase(post.title)
+        let title = lodash.lowerCase(post.title)
         if (requestedPost === title) {
 
             res.render("post", {
