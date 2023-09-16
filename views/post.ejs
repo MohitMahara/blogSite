@@ -9,12 +9,13 @@
     <%-include("partials/navbar.ejs")  %>
 
     <main class="container-fluid col-md-10 col-12">
-        <div class="blog-section">
+        <form class="blog-section" action="/delete" method="post">
 
               <h1 id="post-title"><%= title %></h1>
               <p id="post-content"><%= content %></p>
-
-        </div>
+              <input type="hidden" name="deletePost" value="<%=postId%>" >
+              <button type="submit" class="deleteBtn">Delete</button>
+        </form>
     </main>
 
 

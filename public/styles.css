@@ -139,7 +139,8 @@ hr{
 }
 
 .post-item h2{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    font-size: 30px;
 }
 
 .post-item p,
@@ -173,7 +174,8 @@ hr{
     margin-bottom: 40px;
 }
 
-.about-us .about-us-left button{
+.about-us .about-us-left button,
+.deleteBtn{
     padding: 10px 30px;
     background-color: #1F8A70;
     color: white;
@@ -181,6 +183,13 @@ hr{
     border: none;
 
 }
+
+.deleteBtn{
+    display: flex;
+    margin:40px auto;
+}
+
+
 
 
 /* footer section */

@@ -1,11 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
-const lodash = require("lodash");
+const mongoose = require("mongoose");
 const app = express();
 const PORT = process.env.PORT || 8000;
 const date = new Date();
-let posts = [];
 
 const publicPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../views");
@@ -19,13 +18,30 @@ app.use(bodyParser.urlencoded({
 app.set("view engine", "ejs");
 
 app.use(express.static(publicPath));
-app.set('views', viewsPath );
+app.set('views', viewsPath);
+
+mongoose.connect("mongodb://127.0.0.1:27017/blogDB", {
+    useNewUrlParser: true
+});
+
+const postSchema = new mongoose.Schema({
+    title: String,
+    content: String
+});
+
+const Post = mongoose.model("Post", postSchema);
+
 
 app.get("/", (req, res) => {
-    res.render('index', {
-        year: date.getFullYear(),
-        posts: posts
-    });
+
+    Post.find().then((posts) => {
+        res.render("index", {
+            year: date.getFullYear(),
+            posts : posts
+        });
+    })
+
+
 })
 
 app.get("/about", (req, res) => {
@@ -47,35 +63,40 @@ app.get("/compose", (req, res) => {
     });
 })
 
+
 app.post("/compose", (req, res) => {
 
-    const newPost = {
-        title: req.body["title"],
-        data: req.body["postData"]
-    }
+    const post = new Post({
+        title: req.body.postTitle,
+        content: req.body.postBody
+    })
 
-    posts.push(newPost);
-
-    res.redirect("/");
+    post.save();
+    res.redirect('/');
+  
 })
 
-app.get("/posts/:postName", (req, res) => {
 
-    let requestedPost = lodash.lowerCase(req.params.postName);
+app.get("/posts/:postId", async(req, res) => {
 
-    posts.forEach(post => {
-        let title = lodash.lowerCase(post.title)
-        if (requestedPost === title) {
-
-            res.render("post", {
-                year: date.getFullYear(),
-                title : post.title,
-                content : post.data,
-            });
-        }
-
-    });
+  let requestedPostId = req.params.postId
+  await Post.findOne({_id : requestedPostId}).then((post) =>{
+    res.render('post', {
+         year: date.getFullYear(),
+         title : post.title,
+         content : post.content,
+         postId : post._id
+    })
+  })
 });
+
+
+app.post('/delete', async (req, res) =>{
+  const  deletingPostId =  req.body.deletePost;
+  await Post.deleteOne({_id : deletingPostId});
+  res.redirect('/')
+
+})
 
 
 app.listen(PORT, () => {
