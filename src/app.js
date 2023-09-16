@@ -20,7 +20,7 @@ app.set("view engine", "ejs");
 app.use(express.static(publicPath));
 app.set('views', viewsPath);
 
-mongoose.connect("mongodb://127.0.0.1:27017/blogDB", {
+mongoose.connect("mongodb+srv://maharamohit144:1234567890@cluster0.ene7uao.mongodb.net/blogDB", {
     useNewUrlParser: true
 });
 
