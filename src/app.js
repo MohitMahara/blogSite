@@ -34,7 +34,7 @@ const Post = mongoose.model("Post", postSchema);
 
 app.get("/", (req, res) => {
 
-    Post.find().then((posts) => {
+     Post.find().then((posts) => {
         res.render("index", {
             year: date.getFullYear(),
             posts : posts
